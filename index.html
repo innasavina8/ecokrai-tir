@@ -122,15 +122,6 @@
                     </div>
                 </div>
 
-                <!-- Плашка координатора -->
-                <div class="hidden md:flex items-center gap-3 bg-slate-100 hover:bg-slate-200/70 p-1.5 pr-4 rounded-2xl border border-slate-200/80 transition cursor-pointer" onclick="switchTab('author')">
-                    <img id="headerAuthorAvatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" onerror="this.src='https://placehold.co/150x150/16a34a/ffffff?text=БА'" class="w-8 h-8 rounded-xl object-cover border border-white shadow-sm" alt="Координатор">
-                    <div class="text-left leading-tight">
-                        <span class="block text-xs font-bold text-slate-800" id="headerAuthorName">Божко Алиса</span>
-                        <span class="text-[10px] text-eco-700 font-semibold" id="headerAuthorSchool">ТСШ № 17 • 11-А класс</span>
-                    </div>
-                </div>
-
                 <!-- Кнопки управления -->
                 <div class="flex items-center gap-2 sm:gap-3">
                     <button onclick="openModal('problemModal')" class="bg-eco-600 hover:bg-eco-700 text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 shadow-md shadow-eco-600/20 active:scale-95">
@@ -157,11 +148,6 @@
                 <button onclick="switchTab('ecology')" id="tab-btn-ecology" class="tab-btn whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition flex items-center gap-2">
                     <i class="fa-solid fa-earth-europe text-teal-600"></i>
                     <span>Экология Тирасполя</span>
-                </button>
-
-                <button onclick="switchTab('author')" id="tab-btn-author" class="tab-btn whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition flex items-center gap-2">
-                    <i class="fa-solid fa-circle-info text-eco-600"></i>
-                    <span>О проекте</span>
                 </button>
             </div>
         </div>
@@ -418,85 +404,6 @@
                                 <span data-editable-id="rec_west_item2"><b>Спец-контейнеры:</b> Около супермаркета по пер. Раевского.</span>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= ВКЛАДКА 4: О ПРОЕКТЕ И КООРДИНАТОРЕ ================= -->
-        <section id="tab-author" class="tab-content hidden space-y-8">
-            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-b border-slate-100 pb-8">
-                    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
-                        <div class="relative group">
-                            <img id="authorTabPhoto" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400" onerror="this.src='https://placehold.co/300x300/16a34a/ffffff?text=Божко+Алиса'" class="w-32 h-32 sm:w-36 sm:h-36 rounded-3xl object-cover border-4 border-eco-100 shadow-md" alt="Фото координатора">
-                            <button id="creatorEditPhotoBtn" onclick="openAuthorSettingsModal()" class="hidden absolute bottom-1 right-1 bg-eco-600 hover:bg-eco-700 text-white w-9 h-9 rounded-2xl flex items-center justify-center shadow-lg transition" title="Изменить профиль">
-                                <i class="fa-solid fa-camera text-sm"></i>
-                            </button>
-                        </div>
-                        <div class="space-y-2">
-                            <span data-editable-id="author_badge_tag" class="px-3 py-1 bg-eco-100 text-eco-800 text-xs font-extrabold rounded-full border border-eco-200">Координатор и участник проекта</span>
-                            <h2 id="authorTabName" data-editable-id="author_name_text" class="text-2xl sm:text-3xl font-black text-slate-900">Божко Алиса</h2>
-                            <p id="authorTabSchool" data-editable-id="author_school_text" class="text-sm font-semibold text-eco-700">МОУ «ТСШ № 17», г. Тирасполь • 11-А класс</p>
-                            <div class="flex flex-wrap justify-center sm:justify-start gap-2 pt-1 text-xs text-slate-500">
-                                <span class="bg-slate-100 px-3 py-1 rounded-xl"><i class="fa-solid fa-location-dot text-rose-500 mr-1"></i>г. Тирасполь</span>
-                                <span class="bg-slate-100 px-3 py-1 rounded-xl"><i class="fa-solid fa-graduation-cap text-eco-600 mr-1"></i>Школьный эко-кружок, 2026</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button id="creatorEditAuthorBtn" onclick="openAuthorSettingsModal()" class="hidden w-full md:w-auto bg-eco-600 hover:bg-eco-700 text-white px-6 py-3 rounded-2xl font-bold text-sm transition shadow-lg shadow-eco-600/20 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <span>Настройки профиля и пароля</span>
-                    </button>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-8">
-                    <div class="lg:col-span-2 space-y-6">
-                        <div>
-                            <h3 data-editable-id="author_bio_heading" class="text-lg font-bold text-slate-900 mb-2">О проекте «ЭкоКрай Тирасполь»</h3>
-                            <p id="authorTabBio" data-editable-id="author_bio_text" class="text-sm text-slate-600 leading-relaxed">
-                                Данный веб-портал создан для экологической и волонтерской работы в городе Тирасполь. Цель проекта — дать тираспольчанам удобный инструмент для фиксации экологических проблем, демонстрации выполненных улучшений, объединения усилий школьного эко-кружка и помощи животным столицы.
-                            </p>
-                        </div>
-
-                        <div class="bg-emerald-50/60 border border-emerald-100 p-5 rounded-2xl space-y-2">
-                            <h4 data-editable-id="author_tasks_title" class="font-bold text-eco-900 text-sm flex items-center gap-2">
-                                <i class="fa-solid fa-bullseye text-eco-600"></i>
-                                Задачи проекта:
-                            </h4>
-                            <ul class="text-xs text-slate-700 space-y-1.5 list-disc list-inside">
-                                <li data-editable-id="author_task_1">Мониторинг экологического состояния микрорайонов Тирасполя и фиксация улучшений.</li>
-                                <li data-editable-id="author_task_2">Информирование об акциях географического кружка и датах сборов.</li>
-                                <li data-editable-id="author_task_3">Привлечение внимания к городскому приюту для животных.</li>
-                                <li data-editable-id="author_task_4">Формирование экологической культуры среди молодежи города.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 space-y-4">
-                        <h3 data-editable-id="author_contacts_title" class="font-bold text-slate-900 text-base">Контакты координатора</h3>
-                        <div class="space-y-3 text-xs">
-                            <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-100">
-                                <div class="w-8 h-8 bg-eco-100 text-eco-700 rounded-lg flex items-center justify-center">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-[10px] text-slate-400">Почта / Связь</span>
-                                    <span id="authorTabEmail" data-editable-id="author_email_text" class="font-semibold text-slate-800">bozhko.alisa.17@mail.ru</span>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-100">
-                                <div class="w-8 h-8 bg-teal-100 text-teal-700 rounded-lg flex items-center justify-center">
-                                    <i class="fa-solid fa-paper-plane"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-[10px] text-slate-400">Telegram / Мессенджер</span>
-                                    <span id="authorTabTelegram" data-editable-id="author_telegram_text" class="font-semibold text-slate-800">@alisa_eco_tir</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -774,67 +681,6 @@
         </div>
     </div>
 
-    <!-- МОДАЛКА 4: Настройки администратора (Профиль координатора и смена пароля) -->
-    <div id="authorModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl space-y-5 relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 w-8 h-8 rounded-full flex items-center justify-center bg-slate-100">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div class="space-y-1">
-                <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <i class="fa-solid fa-user-gear text-eco-600"></i>
-                    Настройки профиля и пароля администратора
-                </h3>
-                <p class="text-xs text-slate-500">Вы можете поменять фото, данные координатора и пароль доступа</p>
-            </div>
-
-            <form id="authorForm" onsubmit="handleAuthorSubmit(event)" class="space-y-4 text-xs sm:text-sm">
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">Загрузить новое фото</label>
-                    <input type="file" id="authorPhotoInput" accept="image/*" onchange="handleImageCompress(this, 'authorPhotoPreview')" class="w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-eco-50 file:text-eco-700 hover:file:bg-eco-100 cursor-pointer">
-                    <img id="authorPhotoPreview" src="" class="mt-3 rounded-2xl w-24 h-24 object-cover hidden border border-slate-200" alt="Фото профиля">
-                </div>
-
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">Имя и Фамилия координатора *</label>
-                    <input type="text" id="authorInputName" required placeholder="Например: Божко Алиса" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:ring-2 focus:ring-eco-500 focus:outline-none">
-                </div>
-
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">Школа / Класс / Роль *</label>
-                    <input type="text" id="authorInputSchool" required placeholder="Например: МОУ «ТСШ № 17», г. Тирасполь • 11-А класс" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:ring-2 focus:ring-eco-500 focus:outline-none">
-                </div>
-
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">Описание проекта и роли *</label>
-                    <textarea id="authorInputBio" rows="3" required placeholder="Расскажите о цели проекта..." class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:ring-2 focus:ring-eco-500 focus:outline-none"></textarea>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                        <label class="block font-semibold text-slate-700 mb-1">Email / Почта</label>
-                        <input type="email" id="authorInputEmail" placeholder="student@mail.ru" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:ring-2 focus:ring-eco-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block font-semibold text-slate-700 mb-1">Telegram / Контакт</label>
-                        <input type="text" id="authorInputTelegram" placeholder="@alisa_eco_tir" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 focus:ring-2 focus:ring-eco-500 focus:outline-none">
-                    </div>
-                </div>
-
-                <div class="pt-2 border-t border-slate-100">
-                    <label class="block font-semibold text-amber-800 mb-1">Новый пароль доступа (SHA-256)</label>
-                    <input type="password" id="authorNewPin" autocomplete="new-password" placeholder="Оставьте пустым, если не меняете" class="w-full bg-amber-50/50 border border-amber-200 rounded-xl p-3 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
-                </div>
-
-                <div class="pt-2 flex justify-end gap-3">
-                    <button type="button" onclick="closeModal('authorModal')" class="px-4 py-2.5 rounded-xl border border-slate-200 font-semibold text-slate-600 hover:bg-slate-50">Отмена</button>
-                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-eco-600 hover:bg-eco-700 text-white font-bold shadow-md shadow-eco-600/20">Сохранить изменения</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <!-- МОДАЛКА 5: Кастомное окно подтверждения -->
     <div id="confirmModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-sm w-full p-6 sm:p-7 shadow-2xl space-y-5 relative text-center">
@@ -863,7 +709,6 @@
             PROBLEMS: 'ecokrai_tir_problems_v1',
             ACTIONS: 'ecokrai_tir_actions_v1',
             REPORTS: 'ecokrai_tir_reports_v1',
-            AUTHOR: 'ecokrai_tir_author_v1',
             HABITS: 'ecokrai_tir_habits_v1',
             TEXTS: 'ecokrai_tir_texts_v1',
             PASS_HASH: 'ecokrai_tir_admin_hash_v1',
@@ -973,15 +818,6 @@
                 image: 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600'
             }
         ];
-
-        const DEFAULT_AUTHOR = {
-            name: 'Божко Алиса',
-            school: 'МОУ «ТСШ № 17», г. Тирасполь • 11-А класс',
-            bio: 'Координатор экологического проекта «ЭкоКрай Тирасполь», участник школьного географического и эко-кружка. Портал помогает фиксировать экологические проблемы Тирасполя, отмечать выполненные улучшения и поддерживать приюты для животных.',
-            email: 'bozhko.alisa.17@mail.ru',
-            telegram: '@alisa_eco_tir',
-            photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400'
-        };
 
         const HABITS_LIST = [
             { id: 'h1', label: 'Сдаю батарейки в эко-боксы «Шерифа» или ПГУ' },
@@ -1162,26 +998,24 @@
         function applyAdminUI() {
             const banner = document.getElementById('creatorBanner');
             const addActWrap = document.getElementById('creatorAddActionWrapper');
-            const editPhotoBtn = document.getElementById('creatorEditPhotoBtn');
-            const editAuthorBtn = document.getElementById('creatorEditAuthorBtn');
             const resetBtn = document.getElementById('footerResetBtn');
             const editables = document.querySelectorAll('[data-editable-id]');
+            const show = (el, visible) => {
+                if (!el) return;
+                el.classList.toggle('hidden', !visible);
+            };
 
             if (isAdmin) {
                 document.body.classList.add('creator-mode');
-                banner.classList.remove('hidden');
-                addActWrap.classList.remove('hidden');
-                editPhotoBtn.classList.remove('hidden');
-                editAuthorBtn.classList.remove('hidden');
-                resetBtn.classList.remove('hidden');
+                show(banner, true);
+                show(addActWrap, true);
+                show(resetBtn, true);
                 editables.forEach(el => el.setAttribute('contenteditable', 'true'));
             } else {
                 document.body.classList.remove('creator-mode');
-                banner.classList.add('hidden');
-                addActWrap.classList.add('hidden');
-                editPhotoBtn.classList.add('hidden');
-                editAuthorBtn.classList.add('hidden');
-                resetBtn.classList.add('hidden');
+                show(banner, false);
+                show(addActWrap, false);
+                show(resetBtn, false);
                 editables.forEach(el => el.removeAttribute('contenteditable'));
             }
 
@@ -1202,64 +1036,6 @@
 
         function saveList(key, data) {
             localStorage.setItem(key, JSON.stringify(data));
-        }
-
-        function loadAuthor() {
-            const raw = localStorage.getItem(KEYS.AUTHOR);
-            return raw ? JSON.parse(raw) : { ...DEFAULT_AUTHOR };
-        }
-
-        function renderAuthor() {
-            const a = loadAuthor();
-            document.getElementById('headerAuthorName').textContent = a.name;
-            document.getElementById('headerAuthorSchool').textContent = a.school;
-            document.getElementById('headerAuthorAvatar').src = a.photo;
-
-            document.getElementById('authorTabName').textContent = a.name;
-            document.getElementById('authorTabSchool').textContent = a.school;
-            document.getElementById('authorTabBio').textContent = a.bio;
-            document.getElementById('authorTabEmail').textContent = a.email;
-            document.getElementById('authorTabTelegram').textContent = a.telegram;
-            document.getElementById('authorTabPhoto').src = a.photo;
-        }
-
-        function openAuthorSettingsModal() {
-            const a = loadAuthor();
-            document.getElementById('authorInputName').value = a.name;
-            document.getElementById('authorInputSchool').value = a.school;
-            document.getElementById('authorInputBio').value = a.bio;
-            document.getElementById('authorInputEmail').value = a.email;
-            document.getElementById('authorInputTelegram').value = a.telegram;
-            document.getElementById('authorNewPin').value = '';
-            const prev = document.getElementById('authorPhotoPreview');
-            prev.src = a.photo;
-            prev.classList.remove('hidden');
-            delete compressedTemp['authorPhotoPreview'];
-            openModal('authorModal');
-        }
-
-        async function handleAuthorSubmit(e) {
-            e.preventDefault();
-            const current = loadAuthor();
-            const updated = {
-                name: document.getElementById('authorInputName').value.trim(),
-                school: document.getElementById('authorInputSchool').value.trim(),
-                bio: document.getElementById('authorInputBio').value.trim(),
-                email: document.getElementById('authorInputEmail').value.trim(),
-                telegram: document.getElementById('authorInputTelegram').value.trim(),
-                photo: compressedTemp['authorPhotoPreview'] || current.photo
-            };
-            localStorage.setItem(KEYS.AUTHOR, JSON.stringify(updated));
-            renderAuthor();
-
-            const newPwd = document.getElementById('authorNewPin').value.trim();
-            if (newPwd) {
-                const newHash = await computeSha256(newPwd);
-                localStorage.setItem(KEYS.PASS_HASH, newHash);
-            }
-
-            closeModal('authorModal');
-            showToast('Профиль координатора и настройки обновлены');
         }
 
         /* ================= ВКЛАДКА 1: ПРОБЛЕМЫ И УЛУЧШЕНИЯ ================= */
@@ -1718,10 +1494,8 @@
                 localStorage.removeItem(KEYS.PROBLEMS);
                 localStorage.removeItem(KEYS.ACTIONS);
                 localStorage.removeItem(KEYS.REPORTS);
-                localStorage.removeItem(KEYS.AUTHOR);
                 localStorage.removeItem(KEYS.HABITS);
                 localStorage.removeItem(KEYS.TEXTS);
-                renderAuthor();
                 renderProblems();
                 renderActions();
                 renderReports();
@@ -1782,7 +1556,6 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             initEditableTexts();
-            renderAuthor();
             renderProblems();
             renderActions();
             renderReports();
